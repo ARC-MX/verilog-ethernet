@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Wed Mar 10 21:20:25 2021
+# Process ID: 27671
+# Current directory: /home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga/fpga.runs/synth_1
+# Command line: vivado -log fpga.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fpga.tcl
+# Log file: /home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga/fpga.runs/synth_1/fpga.vds
+# Journal file: /home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga/fpga.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source fpga.tcl -notrace

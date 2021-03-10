@@ -1,0 +1,338 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
+| Date         : Wed Mar 10 21:24:22 2021
+| Host         : students running 64-bit Ubuntu 18.04.2 LTS
+| Command      : report_methodology -file fpga_methodology_drc_routed.rpt -pb fpga_methodology_drc_routed.pb -rpx fpga_methodology_drc_routed.rpx
+| Design       : fpga
+| Device       : xc7a35tcsg324-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 48
++-----------+----------+-----------------------------------------------------------+------------+
+| Rule      | Severity | Description                                               | Violations |
++-----------+----------+-----------------------------------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert                              | 2          |
+| SYNTH-5   | Warning  | Mapped onto distributed RAM because of timing constraints | 4          |
+| SYNTH-16  | Warning  | Address collision                                         | 1          |
+| TIMING-9  | Warning  | Unknown CDC Logic                                         | 1          |
+| TIMING-18 | Warning  | Missing input or output delay                             | 11         |
+| XDCH-2    | Warning  | Same min and max delay values on IO port                  | 29         |
++-----------+----------+-----------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell core_inst/eth_mac_inst/eth_mac_1g_mii_inst/mii_phy_if_inst/m_rst_sync1_reg_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) core_inst/eth_mac_inst/rx_fifo/fifo_inst/m_rst_sync1_reg_reg/PRE, core_inst/eth_mac_inst/rx_fifo/fifo_inst/m_rst_sync2_reg_reg/PRE, core_inst/eth_mac_inst/rx_fifo/fifo_inst/m_rst_sync3_reg_reg/PRE, core_inst/eth_mac_inst/rx_fifo/fifo_inst/s_rst_sync1_reg_reg/PRE, core_inst/eth_mac_inst/rx_fifo/fifo_inst/s_rst_sync2_reg_reg/PRE, core_inst/eth_mac_inst/rx_fifo/fifo_inst/s_rst_sync3_reg_reg/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell sync_reset_inst/m_rst_sync2_reg_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) core_inst/eth_mac_inst/tx_fifo/fifo_inst/m_rst_sync1_reg_reg/PRE, core_inst/eth_mac_inst/tx_fifo/fifo_inst/m_rst_sync2_reg_reg/PRE, core_inst/eth_mac_inst/tx_fifo/fifo_inst/m_rst_sync3_reg_reg/PRE, core_inst/eth_mac_inst/tx_fifo/fifo_inst/s_rst_sync1_reg_reg/PRE, core_inst/eth_mac_inst/tx_fifo/fifo_inst/s_rst_sync2_reg_reg/PRE, core_inst/eth_mac_inst/tx_fifo/fifo_inst/s_rst_sync3_reg_reg/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+SYNTH-5#1 Warning
+Mapped onto distributed RAM because of timing constraints  
+The instance core_inst/udp_complete_inst/ip_complete_inst/arp_inst/arp_cache_inst/valid_mem_reg_0_127_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
+Related violations: <none>
+
+SYNTH-5#2 Warning
+Mapped onto distributed RAM because of timing constraints  
+The instance core_inst/udp_complete_inst/ip_complete_inst/arp_inst/arp_cache_inst/valid_mem_reg_128_255_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
+Related violations: <none>
+
+SYNTH-5#3 Warning
+Mapped onto distributed RAM because of timing constraints  
+The instance core_inst/udp_complete_inst/ip_complete_inst/arp_inst/arp_cache_inst/valid_mem_reg_256_383_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
+Related violations: <none>
+
+SYNTH-5#4 Warning
+Mapped onto distributed RAM because of timing constraints  
+The instance core_inst/udp_complete_inst/ip_complete_inst/arp_inst/arp_cache_inst/valid_mem_reg_384_511_0_0 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
+Related violations: <none>
+
+SYNTH-16#1 Warning
+Address collision  
+Block RAM core_inst/udp_complete_inst/ip_complete_inst/arp_inst/arp_cache_inst/ip_addr_mem_reg may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+TIMING-9#1 Warning
+Unknown CDC Logic  
+One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on phy_rx_dv relative to clock(s) phy_rx_clk
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on phy_rx_er relative to clock(s) phy_rx_clk
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on phy_rxd[0] relative to clock(s) phy_rx_clk
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An input delay is missing on phy_rxd[1] relative to clock(s) phy_rx_clk
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An input delay is missing on phy_rxd[2] relative to clock(s) phy_rx_clk
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An input delay is missing on phy_rxd[3] relative to clock(s) phy_rx_clk
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An output delay is missing on phy_tx_en relative to clock(s) phy_tx_clk
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on phy_txd[0] relative to clock(s) phy_tx_clk
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An output delay is missing on phy_txd[1] relative to clock(s) phy_tx_clk
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An output delay is missing on phy_txd[2] relative to clock(s) phy_tx_clk
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
+An output delay is missing on phy_txd[3] relative to clock(s) phy_tx_clk
+Related violations: <none>
+
+XDCH-2#1 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'btn[0]' for both max and min. Make sure this reflects the design intent.
+set_input_delay 0.000 [get_ports {btn[*]}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 49)
+Related violations: <none>
+
+XDCH-2#2 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'btn[1]' for both max and min. Make sure this reflects the design intent.
+set_input_delay 0.000 [get_ports {btn[*]}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 49)
+Related violations: <none>
+
+XDCH-2#3 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'btn[2]' for both max and min. Make sure this reflects the design intent.
+set_input_delay 0.000 [get_ports {btn[*]}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 49)
+Related violations: <none>
+
+XDCH-2#4 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'btn[3]' for both max and min. Make sure this reflects the design intent.
+set_input_delay 0.000 [get_ports {btn[*]}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 49)
+Related violations: <none>
+
+XDCH-2#5 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'reset_n' for both max and min. Make sure this reflects the design intent.
+set_input_delay 0.000 [get_ports reset_n]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 40)
+Related violations: <none>
+
+XDCH-2#6 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'sw[0]' for both max and min. Make sure this reflects the design intent.
+set_input_delay 0.000 [get_ports {sw[*]}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 58)
+Related violations: <none>
+
+XDCH-2#7 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'sw[1]' for both max and min. Make sure this reflects the design intent.
+set_input_delay 0.000 [get_ports {sw[*]}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 58)
+Related violations: <none>
+
+XDCH-2#8 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'sw[2]' for both max and min. Make sure this reflects the design intent.
+set_input_delay 0.000 [get_ports {sw[*]}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 58)
+Related violations: <none>
+
+XDCH-2#9 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'sw[3]' for both max and min. Make sure this reflects the design intent.
+set_input_delay 0.000 [get_ports {sw[*]}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 58)
+Related violations: <none>
+
+XDCH-2#10 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'uart_rxd' for both max and min. Make sure this reflects the design intent.
+set_input_delay 0.000 [get_ports uart_rxd]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 105)
+Related violations: <none>
+
+XDCH-2#11 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led0_b' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#12 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led0_g' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#13 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led0_r' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#14 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led1_b' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#15 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led1_g' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#16 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led1_r' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#17 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led2_b' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#18 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led2_g' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#19 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led2_r' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#20 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led3_b' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#21 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led3_g' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#22 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led3_r' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#23 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led4' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#24 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led5' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#25 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led6' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#26 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'led7' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {led0_r led0_g led0_b led1_r led1_g led1_b led2_r led2_g led2_b led3_r led3_g led3_b led4 led5 led6 led7}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 34)
+Related violations: <none>
+
+XDCH-2#27 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'phy_ref_clk' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {phy_ref_clk phy_reset_n}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 132)
+Related violations: <none>
+
+XDCH-2#28 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'phy_reset_n' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports {phy_ref_clk phy_reset_n}]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 132)
+Related violations: <none>
+
+XDCH-2#29 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'uart_txd' for both max and min. Make sure this reflects the design intent.
+set_output_delay 0.000 [get_ports uart_txd]
+/home/mxwang/Project/FPGA/ARTY100T/verilog-ethernet/example/Arty/fpga/fpga.xdc (Line: 103)
+Related violations: <none>
+
+
